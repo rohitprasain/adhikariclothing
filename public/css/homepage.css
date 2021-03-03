@@ -1,11 +1,133 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.homepage{
+    background: #ededed;
+    min-height: 100vh;
 
-.navbar{
-    background-color: green;
+}
+.nav {
+    background: #ededed;
 
-    min-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 5rem;
+    padding: 0.5rem 1rem;
+}
+
+
+.nav .logo p{
+    font-family: "Love Ya Like A Sister", cursive;
+
+    /* display: flex; */
+    font-size: 2.2rem;
+    color: #008cba;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+.menu {
+    margin-left: 5rem;
+}
+
+.fas {
+    cursor: pointer;
+}
+.nav .mainmenu {
+    list-style: none;
+    display: flex;
+}
+
+.nav .mainmenu li a {
+    text-decoration: none;
+    color: #008cba;
+    font-size: 1.2rem;
+}
+.nav .mainmenu li a:hover{
+    color: #54c1e6;
+}
+.cart {
+    margin-left: 3rem;
+    font-size: 1.2rem;
+    color: rgb(163, 60, 60);
+}
+.cart:hover{
+    /* font-size: 2rem; */
+    color: black;
+}
+.nav .openhamburger,
+.closehamburger,
+.mediaicons {
+    display: none;  
+}
+
+.fa-facebook {color: rgb(0, 110, 255);}
+.fa-twitter {color: rgb(86, 154, 243);}
+.fa-instagram {color: rgb(255, 0, 191);}
+.fa-github {color: rgb(255, 123, 0);}
+
+@media (max-width: 800px) {
+    .nav .logo {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav .logo p {
+        font-size: 1.7rem;
+    }
+
+    .nav .openhamburger {
+        margin-left: 10rem;
+        display: inline;
+        margin-right: 20px;
+        font-size: 1.5rem;
+    }
+
+    .nav .mainmenu {
+        display: none;
+
+        /*if display is flex */
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background: #ededed;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav .closehamburger {
+        display: inline;
+
+        font-size: 2rem;
+        position: absolute;
+        top: 1.3rem;
+        right: 3.2rem;
+    }
+    .menu  , .cart{
+        margin-left: 0rem;
+        margin-top: 1rem;
+    }
+
+    .nav .mainmenu .mediaicons {
+        display: flex;
+
+        flex-direction: column;
+
+        cursor: pointer;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .fab{
+        margin-top: 1rem;
+    }
+    .fa-facebook:hover {color: rgb(45, 70, 102);}
+    .fa-twitter:hover {color: rgb(45, 96, 163);}
+    .fa-instagram:hover {color: rgb(110, 46, 94);}
+    .fa-github:hover {color: rgb(100, 67, 35);}
 }
