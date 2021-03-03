@@ -5,12 +5,15 @@
     box-sizing: border-box;
 }
 .homepage{
-    background: #ededed;
+    background: #ffff;
     min-height: 100vh;
 
 }
+.container{
+    min-height: 100vh;
+}
 .nav {
-    background: #ededed;
+    /* background: #ffff; */
 
     display: flex;
     justify-content: space-between;
@@ -70,6 +73,17 @@
 .fa-instagram {color: rgb(255, 0, 191);}
 .fa-github {color: rgb(255, 123, 0);}
 
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #ededed;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
 @media (max-width: 800px) {
     .nav .logo {
         flex-direction: column;

@@ -53,8 +53,11 @@
 
             </div>
             <hr>
-
+            
         </div>
+        <div class="footer">
+                <p>&copy;2021 rasmiclothing.pvt.ltd. || All rights reserved </p>
+            </div>
         <script src="{{url('/js/homepage.js')}}"></script>
 
 </body>
