@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +22,10 @@ Route::get('/', function () {
 Route::get('/logout', function () {
     return view('welcome');
 })->middleware('guest');;
+
+
+Route::get('/showemployee', [App\Http\Controllers\EmployeesController::class, 'showemployee'])->name('showemployee')->middleware('auth');
+Route::get('/addemployee', [App\Http\Controllers\EmployeesController::class, 'addemployee'])->name('addemployee')->middleware('auth');
 
 Auth::routes();
 

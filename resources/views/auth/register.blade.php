@@ -1,77 +1,69 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<!DOCTYPE html>
+<html lang="en">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{url('/images/dress.png')}}">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <title>Rasmi Clothing</title>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <link rel="stylesheet" href="{{url('/css/loginpage.css')}}" type="text/css">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+    <!--Pulling Awesome Font -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+</head>
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<body>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+    <div class="main">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+        <div class="container">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <form action="{{route('register')}}" method="POST">
+                @csrf
+                <div class="admin-description">
+                    <h2>Rasmi Clothing</h2>
+                    <h3>Register</h3>
                 </div>
-            </div>
+                <hr>
+                <div class="name">
+                    <input type="text" required placeholder="full name" name="name" value="{{ old('name') }}">
+                    @error('name')
+                        <p style="text-align: center; color:red;">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="email">
+                    <input type="email" required placeholder="email" name="email" value="{{ old('email') }}">
+                    @error('email')
+                        <p style="text-align: center; color:red;">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="password">
+                    <input type="password" required placeholder="password" name="password">
+                    @error('password')
+                        <p style="text-align: center; color:red;">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="password-confirmation">
+                    <input type="password" required placeholder="confirm password" name="password_confirmation">
+                    @error('password')
+                        <p style="text-align: center; color:red;">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="login-btn">
+                    <button type="submit" class="login-btn">Register <i class="fa fa-sign-in"></i></button>  
+                </div>
+            </form>
+
         </div>
+
     </div>
-</div>
-@endsection
+
+</body>
+
+</html>
