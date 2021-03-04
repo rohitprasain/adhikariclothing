@@ -1,23 +1,19 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+<div class="content-container">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="heading">
+        <h2>All Employees</h2>
 
-                    {{ __('You are logged in show!') }}
-                </div>
-            </div>
+
+        @foreach($employees as $employee)
+
+        <div class="show">
+           {{$employee->firstname}}
         </div>
+
+        @endforeach
     </div>
 </div>
 @endsection

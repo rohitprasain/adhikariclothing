@@ -25,7 +25,10 @@ Route::get('/logout', function () {
 
 
 Route::get('/showemployee', [App\Http\Controllers\EmployeesController::class, 'showemployee'])->name('showemployee')->middleware('auth');
+
+
 Route::get('/addemployee', [App\Http\Controllers\EmployeesController::class, 'addemployee'])->name('addemployee')->middleware('auth');
+Route::post('/addemployee', [App\Http\Controllers\EmployeesController::class, 'store'])->name('addemployee')->middleware('auth');
 
 Auth::routes();
 

@@ -3,25 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Employee;
+
 
 class EmployeesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function showemployee()
     {
-        
-        return view('showemployee');
+        $employees = Employee::all();
+
+        return view('showemployee' , [
+            'employees' => $employees,
+        ]);
+    }
+    
+    public function addemployee()
+    {
+
+        return view('addemployee');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
@@ -35,7 +38,27 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'email' => 'required ',
+            'contact' => 'required | integer ',
+            'email' => 'required | email',
+        ]);
+
+        $employee = new Employee();
+        $employee->firstname  = $request->firstname;
+        $employee->lastname  = $request->lastname;
+        $employee->contact  = $request->contact;
+        $employee->address  = $request->address;
+        $employee->email  = $request->email;
+        $employee->description  = $request->description;
+
+        $employee->save();
+
+        return redirect('/home');
+
     }
 
     /**
