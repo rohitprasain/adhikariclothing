@@ -11,6 +11,10 @@
 
         <div class="show">
            {{$employee->firstname}}
+           {{$employee->lastname}}
+           <h4>
+                <a href="/showdetail/{{$employee->id}}">{{$employee -> contact}}</a> 
+             </h4> 
         </div>
 
         @endforeach

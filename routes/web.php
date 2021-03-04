@@ -24,11 +24,13 @@ Route::get('/logout', function () {
 })->middleware('guest');;
 
 
-Route::get('/showemployee', [App\Http\Controllers\EmployeesController::class, 'showemployee'])->name('showemployee')->middleware('auth');
+Route::get('/allemployee', [App\Http\Controllers\EmployeesController::class, 'allemployee'])->name('allemployee')->middleware('auth');
 
 
 Route::get('/addemployee', [App\Http\Controllers\EmployeesController::class, 'addemployee'])->name('addemployee')->middleware('auth');
 Route::post('/addemployee', [App\Http\Controllers\EmployeesController::class, 'store'])->name('addemployee')->middleware('auth');
+
+Route::get('/showdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'show'])->name('showemployee')->middleware('auth');
 
 Auth::routes();
 

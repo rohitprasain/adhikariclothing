@@ -74,7 +74,7 @@
 
             <div class="operations">
                 <ul>
-                    <li class="tasks tasks1"><a href="{{route('showemployee')}}">All Employee</a></li>
+                    <li class="tasks tasks1"><a href="{{route('allemployee')}}">All Employee</a></li>
                     <li class="tasks"> <a href="{{route('addemployee')}}">Add Employee</a></li>
                 </ul>
             </div>

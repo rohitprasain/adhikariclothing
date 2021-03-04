@@ -9,11 +9,11 @@ use App\Models\Employee;
 class EmployeesController extends Controller
 {
 
-    public function showemployee()
+    public function allemployee()
     {
         $employees = Employee::all();
 
-        return view('showemployee' , [
+        return view('allemployee' , [
             'employees' => $employees,
         ]);
     }
@@ -69,7 +69,9 @@ class EmployeesController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee_id = Employee::findOrFail($id);
+
+        return view('showdetail' , compact('employee_id'));
     }
 
     /**
