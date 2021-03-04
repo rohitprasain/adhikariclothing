@@ -113,8 +113,9 @@
 
 
         </div>
-        <div class="dashboard">
 
+
+        <div class="dashboard">
             <div class="brand">
                 <div class="brand-img">
                     <img src="{{url('images/brandimg.png')}}" alt="brandimage"><br>
@@ -124,16 +125,28 @@
                 </div>
                 <hr style="width: 80%">
             </div>
-        </div>
-            <div class="content">@yield('content')</div>
 
-            <div class="footer">
-                <p>&copy; 99techNepal || All rights reserved || 2021 </p>
+
+            <div class="operations">
+                <ul>
+                    <li class="tasks tasks1"><a href="">All Employee</a></li>
+                    <li class="tasks"> <a href="">Add Employee</a></li>
+                    <!-- <li class="tasks"><a href="">Edit Employee</a></li> -->
+                   
+                </ul>
             </div>
-
         </div>
 
-        @endauth
+
+        <div class="content">@yield('content')</div>
+
+        <div class="footer">
+            <p>&copy; 99TechNepal || All rights reserved || 2021 </p>
+        </div>
+
+    </div>
+
+    @endauth
 </body>
 <script src="{{url('/js/dashboard.js')}}"></script>
 
