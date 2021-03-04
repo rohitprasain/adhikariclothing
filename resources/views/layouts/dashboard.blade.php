@@ -24,9 +24,14 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
 </head>
 
 <body>
+
+    @auth
     <div class="app">
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -79,23 +84,57 @@
             </div>
         </nav> -->
 
-<!-- 
         <div class="navbar">
-            <h2>this is navbar</h2>
+
+            <div class="container">
+
+                <a class="navbar-brand">
+                    <h2>{{__('Welcome.')}} </h2>
+                </a>
+
+                <div class="dropdown">
+                    <button class="dropbtn"> {{ Auth::user()->name[0]}}</button>
+                    <i class="fas fa-caret-down"></i>
+                    <div class="dropdown-content">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                            {{__('LogOut')}}
+                        </a>
+                        <!-- form class isnot validated!!!use form id -->
+                        <form id='logout-form' action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
         <div class="dashboard">
-            <h2>this is dashboard</h2>
+
+            <div class="brand">
+                <div class="brand-img">
+                    <img src="{{url('images/brandimg.png')}}" alt="brandimage"><br>
+                </div>
+                <div class="brand-name">
+                    <p>rasmi. clothing</p>
+                </div>
+                <hr style="width: 80%">
+            </div>
+        </div>
+            <div class="content">@yield('content')</div>
+
+            <div class="footer">
+                <p>&copy; 99techNepal || All rights reserved || 2021 </p>
+            </div>
+
         </div>
 
-        <div class="content">
-            @yield('content')
-        </div> -->
-
-        <div class="navbar">Navbar1</div>
-        <div class="dashboard">Dashboard2</div>
-        <div class="content">@yield('content')</div>
-        <div class="footer">Footer4</div>
-    </div>
+        @endauth
 </body>
+<script src="{{url('/js/dashboard.js')}}"></script>
 
 </html>
