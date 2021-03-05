@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Employee;
 
 
+
 class EmployeesController extends Controller
 {
 
@@ -45,7 +46,7 @@ class EmployeesController extends Controller
             'email' => 'required ',
             'contact' => 'required | integer ',
             'email' => 'required | email',
-            'description' => 'required | max:30',
+            'description' => 'required | max:20',
         ]);
 
         $employee = new Employee();

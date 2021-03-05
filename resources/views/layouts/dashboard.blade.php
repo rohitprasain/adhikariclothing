@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('/css/allemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/detailemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/addemployee.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/home.css')}}" type="text/css">
 
 
 
@@ -66,7 +67,7 @@
         <div class="dashboard">
             <div class="brand">
                 <div class="brand-img">
-                    <img src="{{url('images/brandimg.png')}}" alt="brandimage"><br>
+                    <img src="{{url('images/dress.png')}}" alt="brandimage"><br>
                 </div>
                 <div class="brand-name">
                     <p>rasmi. clothing</p>

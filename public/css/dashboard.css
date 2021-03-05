@@ -7,15 +7,13 @@
 }
 
 .app {
-    background-color: #ededed;
+    /* background-color: #ededed; */
     min-height: 100vh;
 
     display: grid;
-
+/* 
     grid-column-start: 1;
-    grid-column-end: 3;
-
-    min-height: 100vh;
+    grid-column-end: 3; */
 }
 
 .dashboard {
@@ -215,3 +213,26 @@ li {
     box-shadow: 5px 10px 18px #888888;
     margin: 1px 5px 5px 5px;
 }
+
+@media (max-width:1100px){
+    .brand-name p{
+        font-size: 1.2rem;
+    }
+    .operations a{
+        font-size: .8rem;
+    }
+
+
+    .all-show .detail{
+        /* font-size: .5rem; */
+    }
+   
+
+}
+
+@media (max-width:900px){
+    .footer{
+        font-size: 1rem;
+    }
+}
+

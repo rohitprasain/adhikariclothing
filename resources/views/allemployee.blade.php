@@ -54,7 +54,9 @@
 
                 </td>
                 <td>
-                    <a class="detail" href="/showdetail/{{$employee->id}}">details <i class="far fa-edit"></i></a>
+                    <a class="detail" href="/showdetail/{{$employee->id}}">details
+                        <i class="far fa-edit"></i>
+                    </a>
                 </td>
             </tr>
             @endforeach
