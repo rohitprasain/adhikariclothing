@@ -32,6 +32,9 @@ Route::post('/addemployee', [App\Http\Controllers\EmployeesController::class, 's
 
 Route::get('/showdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'show'])->name('showemployee')->middleware('auth');
 
+
+Route::delete('/delete/{id}', [App\Http\Controllers\EmployeesController::class, 'destroy'])->name('deleteemployee')->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,6 +10,8 @@
     <link rel="icon" href="{{url('/images/dress.png')}}">
 
     <link rel="stylesheet" href="{{url('/css/dashboard.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/allemployee.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/detailemployee.css')}}" type="text/css">
 
 
 

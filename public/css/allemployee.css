@@ -1,0 +1,66 @@
+.all-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-container .all-heading{
+
+    margin-top: .8rem;
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.all-container input{
+    margin-top: .5rem;
+
+    font-size: 1.3rem;
+    padding: .2rem;
+    text-align: center;
+}
+
+.fa-search{
+    margin-left: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.all-container input:focus{
+    outline: none;
+}
+.all-container .heading h2 {
+    font-size: 1.5rem;
+}
+
+.all-show {
+    margin-top: 2rem;
+}
+
+.all-show table,
+td,
+th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.all-show table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.all-show th,
+td {
+    padding: 15px;
+}
+
+.all-show .detail {
+    margin-left: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    color: #008cba;
+}
+
+.all-show .detail:hover{
+    color: rgb(187, 24, 51);
+
+}
