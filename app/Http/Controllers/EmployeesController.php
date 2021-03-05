@@ -45,6 +45,7 @@ class EmployeesController extends Controller
             'email' => 'required ',
             'contact' => 'required | integer ',
             'email' => 'required | email',
+            'description' => 'required | max:30',
         ]);
 
         $employee = new Employee();

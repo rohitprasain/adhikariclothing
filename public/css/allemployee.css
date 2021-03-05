@@ -17,6 +17,7 @@
     font-size: 1.3rem;
     padding: .2rem;
     text-align: center;
+
 }
 
 .fa-search{
@@ -49,7 +50,7 @@ th {
 
 .all-show th,
 td {
-    padding: 15px;
+    padding: 10px;
 }
 
 .all-show .detail {

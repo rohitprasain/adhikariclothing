@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('/css/dashboard.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/allemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/detailemployee.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/addemployee.css')}}" type="text/css">
 
 
 
@@ -38,8 +39,8 @@
 
         <div class="navbar">
             <div class="container">
-                <a class="navbar-brand">
-                    <h2>{{__('Welcome.')}} </h2>
+                <a class="navbar-brand" href="{{route('home')}}" style="text-decoration: none;">
+                    <h2>{{__('Dashboard.')}} </h2>
                 </a>
 
                 <div class="dropdown">

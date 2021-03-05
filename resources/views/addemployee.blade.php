@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<div class="content-container">
+<div class="add-container">
     <form action="{{route('addemployee')}}" method="POST">
 
         @csrf
@@ -12,14 +12,14 @@
             @enderror
         </div>
 
-        <div> <input type="text" class="" name="lastname" placeholder="lastname" value="{{old('lastname')}}">
+        <div> <input type="text" required class="" name="lastname" placeholder="lastname" value="{{old('lastname')}}">
             @error('lastname')
             <p style="text-align: center; color:red;">{{$message}}</p>
             @enderror
         </div>
 
         <div>
-            <input type="number" class="" name="contact" placeholder="phone number" value="{{old('contact')}}">
+            <input type="number" required class="" name="contact" placeholder="phone number" value="{{old('contact')}}">
             @error('contact')
             <p style="text-align: center; color:red;">{{$message}}</p>
             @enderror
@@ -37,12 +37,13 @@
             @enderror
         </div>
 
-        <div> <textarea required class="" name="description" placeholder="description" value="{{old('description')}}" rows="4" cols="4"></textarea>
+        <div> 
+            <textarea required class="" name="description" placeholder="description" value="{{old('description')}}" rows="8" cols="40"></textarea>
             @error('description')
             <p style="text-align: center; color:red;">{{$message}}</p>
             @enderror
         </div>
-        
+
         <div>
             <button type="submit">Add</button>
         </div>
