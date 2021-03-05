@@ -31,12 +31,6 @@ class EmployeesController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -56,19 +50,11 @@ class EmployeesController extends Controller
         $employee->address  = $request->address;
         $employee->email  = $request->email;
         $employee->description  = $request->description;
-
         $employee->save();
 
         return redirect('/home');
-
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $employee_id = Employee::findOrFail($id);
@@ -76,40 +62,45 @@ class EmployeesController extends Controller
         return view('showdetail' , compact('employee_id'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $edit_id = Employee::findOrFail($id);
+
+        return view('editdetail' , compact('edit_id'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $request->validate([
+            'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'email' => 'required ',
+            'contact' => 'required | integer ',
+            'email' => 'required | email',
+            'description' => 'required | max:20',
+        ]);
+        $edit_employee = Employee::find($id);
+
+        $edit_employee->firstname  = $request->firstname;
+        $edit_employee->lastname  = $request->lastname;
+        $edit_employee->contact  = $request->contact;
+        $edit_employee->address  = $request->address;
+        $edit_employee->email  = $request->email;
+        $edit_employee->description  = $request->description;
+        $edit_employee->save();
+
+
+        // return redirect('/allemployee');
+        return redirect()->route('allemployee')->with('msg','Details Updated Successfully');
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $del_employee = Employee::findOrFail($id);
         $del_employee->delete();
 
-        return redirect('/allemployee');
+        return redirect('/allemployee')->with('msg','Employee Deleted Successfully');
     }
 }

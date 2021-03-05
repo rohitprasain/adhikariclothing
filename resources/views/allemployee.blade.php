@@ -14,6 +14,7 @@
 
 
     <div class="all-show">
+    <p class="mag" style="color: red;">{{session('msg')}}</p>
         <table>
             <tr>
                 <th>

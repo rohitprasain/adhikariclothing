@@ -32,6 +32,10 @@ Route::post('/addemployee', [App\Http\Controllers\EmployeesController::class, 's
 
 Route::get('/showdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'show'])->name('showemployee')->middleware('auth');
 
+Route::post('/editdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'edit'])->name('editemployee')->middleware('auth');
+
+Route::put('/editdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'update'])->name('editemployee')->middleware('auth');
+
 
 Route::delete('/delete/{id}', [App\Http\Controllers\EmployeesController::class, 'destroy'])->name('deleteemployee')->middleware('auth');
 

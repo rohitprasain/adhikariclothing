@@ -26,9 +26,6 @@
                 <th>
                     Description
                 </th>
-                <th>
-
-                </th>
             </tr>
 
             <tr>
@@ -48,21 +45,34 @@
                     {{$employee_id->description}}
 
                 </td>
-                <td>
-                    <form action="/delete/{{$employee_id->id}}" method="POST">
-                        @csrf
-                        @method('DELETE')
 
-                        <button type="submit" class="button button1">Delete</button>
-
-                    </form>
-
-
-                </td>
             </tr>
 
 
         </table>
+        <div class="buttons">
+            <div class="detail-edit">
+                <form action="/editdetail/{{$employee_id->id}}" method="POST">
+                    @csrf
+                   
+
+                    <button type="submit" class="button">Edit</button>
+
+                </form>
+            </div>
+
+            <div class="detail-delete">
+                <form action="/delete/{{$employee_id->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="button">Delete</button>
+
+                </form>
+            </div>
+
+        </div>
+
 
     </div>
 
