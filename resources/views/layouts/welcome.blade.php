@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Rasmi Clothing</title>
+
     <link rel="icon" href="{{url('/images/dress.png')}}">
-
-    <link rel="stylesheet" href="{{url('/css/welcome.css')}}" type="text/css">
-
+    <link rel="stylesheet" href="{{url('/css/welcome/welcome.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/welcome/welcomecontact.css')}}" type="text/css">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
     <style>
@@ -31,7 +30,7 @@
             <div class="nav">
                 <div class="logo">
                     <a href="{{route('welcomehome')}}" style="text-decoration: none;">
-                    <p>rasmi.</p>
+                        <p>rasmi.</p>
                     </a>
                 </div>
 
@@ -53,10 +52,10 @@
                 </ul>
 
             </div>
-
         </div>
 
         <div class="welcome-content">@yield('content')</div>
+
 
         <div class="footer">
             <p>&copy;2021 rasmiclothing.pvt.ltd. || All rights reserved </p>
@@ -64,7 +63,7 @@
 
     </div>
 
-        <script src="{{url('/js/homepage.js')}}"></script>
+    <script src="{{url('/js/homepage.js')}}"></script>
 
 </body>
 

@@ -30,6 +30,7 @@ Route::post('/editdetail/{id}', [App\Http\Controllers\EmployeesController::class
 Route::put('/editdetail/{id}', [App\Http\Controllers\EmployeesController::class, 'update'])->name('editemployee')->middleware('auth');
 
 Route::delete('/delete/{id}', [App\Http\Controllers\EmployeesController::class, 'destroy'])->name('deleteemployee')->middleware('auth');
+Route::delete('/deletemessage/{id}', [App\Http\Controllers\MessageController::class, 'destroy'])->name('deleteemployee')->middleware('auth');
 
 Auth::routes();
 
@@ -41,3 +42,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::get('/welcomehome', [App\Http\Controllers\LandingController::class, 'welcomehome'])->name('welcomehome')->middleware('guest');
 Route::get('/welcomestore', [App\Http\Controllers\LandingController::class, 'welcomestore'])->name('welcomestore')->middleware('guest');
 Route::get('/welcomecontact', [App\Http\Controllers\LandingController::class, 'welcomecontact'])->name('welcomecontact')->middleware('guest');
+
+Route::post('/sendmessage', [App\Http\Controllers\LandingController::class, 'storemessage'])->name('sendmessage')->middleware('guest');
+
+
+
+
+
+Route::get('/allmessages', [App\Http\Controllers\MessageController::class, 'allmessage'])->name('allmessages')->middleware('auth');
+Route::delete('/deletemessage/{$id}', [App\Http\Controllers\MessageController::class, 'destroy'])->name('deletemessage')->middleware('auth');

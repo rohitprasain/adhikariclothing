@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Message;
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -29,10 +31,13 @@ class HomeController extends Controller
     public function index()
     {
 
+
+        $total_message = DB::table('messages')->count();
         $total_employee = DB::table('employees')->where('deleted_at','=',NULL)->count();
 
         return view('home' , [
-            'total' => $total_employee,
+            'totalemployee' => $total_employee,
+            'totalmessage' => $total_message,
         ]);
     
     }
