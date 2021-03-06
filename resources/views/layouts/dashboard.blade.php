@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{url('/css/allemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/detailemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/addemployee.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{url('/css/home.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/dashboardhome.css')}}" type="text/css">
 
 
 

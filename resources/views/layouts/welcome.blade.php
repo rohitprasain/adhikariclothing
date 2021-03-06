@@ -8,7 +8,7 @@
     <title>Rasmi Clothing</title>
     <link rel="icon" href="{{url('/images/dress.png')}}">
 
-    <link rel="stylesheet" href="{{url('/css/homepage.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/welcome.css')}}" type="text/css">
 
 
     <!-- Fonts -->
@@ -30,15 +30,16 @@
 
             <div class="nav">
                 <div class="logo">
+                    <a href="{{route('welcomehome')}}" style="text-decoration: none;">
                     <p>rasmi.</p>
+                    </a>
                 </div>
 
                 <div class="openhamburger"><i class="fa fa-bars"></i></div>
 
                 <ul class="mainmenu">
-                    <li class="menu"><a href="#">Home</a></li>
-                    <li class="menu"><a href="#">About</a></li>
-                    <li class="menu"><a href="#">Contact Us</a></li>
+                    <li class="menu"><a href="{{route('welcomestore')}}">Store</a></li>
+                    <li class="menu"><a href="{{route('welcomecontact')}}">Contact Us</a></li>
 
                     <div class="cart"><i class="fas fa-cart-plus"></i></div>
 
@@ -52,12 +53,17 @@
                 </ul>
 
             </div>
-            <hr>
-            
+
         </div>
+
+        <div class="welcome-content">@yield('content')</div>
+
         <div class="footer">
-                <p>&copy;2021 rasmiclothing.pvt.ltd. || All rights reserved </p>
-            </div>
+            <p>&copy;2021 rasmiclothing.pvt.ltd. || All rights reserved </p>
+        </div>
+
+    </div>
+
         <script src="{{url('/js/homepage.js')}}"></script>
 
 </body>
