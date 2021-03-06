@@ -9,6 +9,7 @@
 
     <link rel="icon" href="{{url('/images/dress.png')}}">
     <link rel="stylesheet" href="{{url('/css/welcome/welcome.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/welcome/welcomehome.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomecontact.css')}}" type="text/css">
 
     <!-- Fonts -->

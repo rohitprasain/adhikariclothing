@@ -12,8 +12,6 @@
 
 
 .nav {
-    /* background: #ffff; */
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +19,7 @@
     min-height: 5rem;
     padding: 0.5rem 1rem;
 
-
+   
     box-shadow: 5px 10px 18px #888888;
     margin: 5px 3px 5px 5px;
 }
@@ -162,4 +160,6 @@
     .fa-twitter:hover {color: rgb(45, 96, 163);}
     .fa-instagram:hover {color: rgb(110, 46, 94);}
     .fa-github:hover {color: rgb(100, 67, 35);}
+
+    
 }
