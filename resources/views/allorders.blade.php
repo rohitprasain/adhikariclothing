@@ -21,13 +21,13 @@
             <h3>Contact: <span style="color: brown;">{{$order->contact}}</span></h3><br>
 
             <h3>Quantity: <span style="color: brown;">{{$order->quantity}}</span></h3>
-            <h3>Price: <span style="color: brown;">{{$order->orderid}}</span></h3><br>
+            <h3>Price: <span style="color: brown;">{{$order->price}}</span></h3><br>
 
             <h3>Total Price: <span style="color: brown;">{{$order->price * $order->quantity}}</span></h3>
 
             <div class="detail-delete delorder" style="margin-top:.5rem">
 
-                <form action="/deleteorder/{{$order->orderid}}" method="POST">
+                <form action="/deleteorder/{{$order->id}}" method="POST">
                     @csrf
 
                     @method('DELETE')
