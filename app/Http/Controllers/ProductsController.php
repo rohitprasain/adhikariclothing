@@ -36,10 +36,9 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
 
         $request->validate([
-            'productid' => 'required | integer ',
             'productname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
             'category'  => 'required | string | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
             'size'  => 'required | string | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
@@ -51,7 +50,6 @@ class ProductsController extends Controller
 
         $product = new Product();
 
-        $product->productid  = $request->productid;
         $product->productname  = $request->productname;
         $product->category  = $request->category;
         $product->size  = $request->size;
@@ -61,7 +59,7 @@ class ProductsController extends Controller
 
         $product->save();
 
-        return redirect('/home')->with('msg','Product Added Successfully');
+        return redirect('/home')->with('msg', 'Product Added Successfully');
     }
 
     /**
@@ -70,9 +68,14 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showproductdetail($id)
     {
-        //
+        // dd($id);
+        $productdetails = Product::findOrFail($id);
+        // dd($productdetails);
+        return view('showproductdetail', [
+            "productdetails" => $productdetails,
+        ]);
     }
 
     /**

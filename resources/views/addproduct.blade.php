@@ -6,13 +6,6 @@
 
         @csrf
 
-        <div>
-            <input type="number" required class="" name="productid" placeholder="product id" value="{{old('productid')}}">
-            @error('productid')
-            <p style="text-align: center; color:red;">{{$message}}</p>
-            @enderror
-        </div>
-
         <div><input type="text" class="" required name="productname" placeholder="product name" value="{{old('productname')}}">
             @error('productname')
             <p style="text-align: center; color:red;">{{$message}}</p>
@@ -35,8 +28,9 @@
             <label for="size">Size:</label><br>
             <select name="size" id="size" required>
                 <option value="small">Small</option>
-                <option value="large">Large</option>
                 <option value="medium">Medium</option>
+                <option value="large">Large</option>
+
             </select>
             @error('size')
             <p style="text-align: center; color:red;">{{$message}}</p>

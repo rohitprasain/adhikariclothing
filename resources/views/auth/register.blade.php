@@ -27,7 +27,7 @@
             <form action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="admin-description">
-                    <h2>Rasmi Clothing</h2>
+                    <h2>Adhikari Clothing</h2>
                     <h3>Register</h3>
                 </div>
                 <hr>

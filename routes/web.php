@@ -50,11 +50,15 @@ Route::post('/sendmessage', [App\Http\Controllers\LandingController::class, 'sto
 Route::get('/allorders', [App\Http\Controllers\OrdersController::class, 'allorder'])->name('allorder')->middleware('auth');
 Route::delete('/deleteorder/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])->name('deleteorder')->middleware('auth');
 
+Route::post('/storeorder/{productid}/{productname}/{size}/{price}', [App\Http\Controllers\OrdersController::class, 'storeorder'])->name('storeorder')->middleware('guest');
+
 
 //productscontroller
 
 Route::get('/addproduct', [App\Http\Controllers\ProductsController::class, 'index'])->name('addproduct')->middleware('auth');
 Route::post('/addproduct', [App\Http\Controllers\ProductsController::class, 'store'])->name('addproduct')->middleware('auth');
+
+Route::get('/showproductdetail/{id}', [App\Http\Controllers\ProductsController::class, 'showproductdetail'])->name('showproductdetail')->middleware('guest');
 
 
 //messagecontroller

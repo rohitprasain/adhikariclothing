@@ -1,6 +1,7 @@
 @extends('layouts.welcome')
 
 @section('content')
+<p class="mag" style="color: red;">{{session('msg')}}</p>
 
 <div class="welcomestore-container">
     <div class="babies">
@@ -9,102 +10,20 @@
         </div>
 
         <div class="popular-cards">
+            @foreach ($babies as $baby)
             <div class="card">
                 <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
+                    <img src="{{url('/images/baby/'.$baby->imglocation)}}" alt="baby-img" height="200rem" width="200rem">
                 </div>
 
                 <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
+                    <p style="color:#008cba; font-size:1.5rem">{{$baby->productname}} ({{$baby->size}})</p>
                 </div>
                 <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
+                    <a href="{{route('showproductdetail',$baby->id)}}"><button type="submit" class="login-btn">Buy</button></a>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/yogadress.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">YogaDress</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/summertshirt.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Summer T-Shirt</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
@@ -114,209 +33,46 @@
         </div>
 
         <div class="popular-cards">
+            @foreach ($female as $female)
             <div class="card">
                 <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
+                    <img src="{{url('/images/female/'.$female->imglocation)}}" alt="female-product" height="200rem" width="200rem">
                 </div>
 
                 <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
+                    <p style="color:#008cba; font-size:1.5rem">{{$female->productname}} ({{$female->size}})</p>
                 </div>
                 <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
+                <a href="/showproductdetail/{{$female->id}}"><button type="submit" class="login-btn">Buy</button></a>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/yogadress.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">YogaDress</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/summertshirt.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Summer T-Shirt</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
+            @endforeach
         </div>
+
+        <div class="men">
+            <div class="babies-title">
+                <p>Men</p>
+            </div>
+
+            <div class="popular-cards">
+                @foreach ($male as $male)
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{url('/images/male/'.$male->imglocation)}}" alt="male-img" height="200rem" width="200rem">
+                    </div>
+
+                    <div class="card-details" style="margin-top: .5rem;">
+                        <p style="color:#008cba; font-size:1.5rem">{{$male->productname}} ({{$male->size}})</p>
+                    </div>
+                    <div class="contact-login-btn">
+                    <a href="/showproductdetail/{{$male->id}}"><button type="submit" class="login-btn">Buy</button></a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="men">
-        <div class="babies-title">
-            <p>Men</p>
-        </div>
-
-        <div class="popular-cards">
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/yogadress.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">YogaDress</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/summertshirt.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Summer T-Shirt</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/babyhoodie.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/jackets.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">Jackets</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{url('/images/products/longsleeves.jpg')}}" alt="" height="200rem" width="200rem">
-                </div>
-
-                <div class="card-details" style="margin-top: .5rem;">
-                    <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
-                </div>
-                <div class="contact-login-btn">
-                    <button type="submit" class="login-btn">Buy</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endsection
+    @endsection

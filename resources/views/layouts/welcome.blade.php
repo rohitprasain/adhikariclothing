@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{url('/css/welcome/welcome.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomehome.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomestore.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/welcome/welcomeorder.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomecontact.css')}}" type="text/css">
 
     <!-- Fonts -->

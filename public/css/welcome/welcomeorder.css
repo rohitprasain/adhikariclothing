@@ -1,0 +1,41 @@
+.order-container {
+    min-height: 40rem;
+    border: 2px solid red;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1rem;
+}
+
+.order-left {
+    /* border: 2px solid red; */
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.order-left p {
+    font-size: 1.5rem;
+    color: #008cba;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-right {
+    /* border: 2px solid red; */
+    margin-top: 2rem;
+}
+
+.order-container input {
+    padding: 5px;
+    margin: 1rem 1rem 1rem 0rem;
+    font-size: 1.1rem;
+}
+
+.order-container input:focus {
+    outline: none;
+}

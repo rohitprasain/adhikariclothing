@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Product;
+
+
+use Illuminate\Support\Facades\DB;
 
 
 class LandingController extends Controller
@@ -17,15 +21,28 @@ class LandingController extends Controller
     {
         return  view('welcomehome');
     }
+
     
     public function welcomestore()
     {
-        return  view('welcomestore');
+        $babies = DB::table('products')->where('category' , 'baby')->get();
+        $male = DB::table('products')->where('category' , 'male')->get();
+        $female = DB::table('products')->where('category' , 'female')->get();
+
+        return  view('welcomestore', [
+            'babies' => $babies,
+            'male' => $male,
+            'female' => $female,
+
+        ]);
     }
+
+
     public function welcomecontact()
     {
         return  view('welcomecontact');
     }
+
 
     public function storemessage(Request $request)
     {

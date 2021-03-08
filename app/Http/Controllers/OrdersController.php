@@ -39,9 +39,31 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeorder(Request $request , $productid , $productname , $size , $price)
     {
-        //
+        $request->validate([
+            'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
+            'contact' => 'required | integer',
+            'quantity' => 'required | integer',
+        ]);
+
+        $storeorder = new Order();
+
+        $storeorder->productid = $productid;
+        $storeorder->productname = $productname;
+        $storeorder->size = $size;
+        $storeorder->price = $price;
+
+        $storeorder->firstname = $request->firstname;
+        $storeorder->lastname = $request->lastname;
+        $storeorder->contact = $request->contact;
+        $storeorder->quantity = $request->quantity;
+
+        $storeorder->save();
+
+        return redirect('/welcomestore')->with('msg' ,'Thanks for order!!!We will contact soon');
+        
     }
 
     /**
