@@ -10,16 +10,20 @@
                                 <img src="{{url('/images/'.$productdetails->category .'/' .$productdetails->imglocation)}}" alt="baby-img" height="250rem" width="300rem">
                         </div>
                         <div class="orderproductname">
-                                <p>{{$productdetails->productname}} ({{$productdetails->size}})</p>
+                                <p>{{$productdetails->productname}}<span style="color: black;"> ({{$productdetails->size}}) </span></p>
                         </div>
 
                         <div class="orderprice">
-                                <p>Price : {{$productdetails->price}}</p>
+                                <p style="color: black;">Price : {{$productdetails->price}}</p>
                         </div>
+
                 </div>
 
 
                 <div class="order-right">
+                        <div class="orderprice">
+                                <p style="color: black; font-size:1.5rem;">Your Details:</p>
+                        </div>
                         <form action="/storeorder/{{$productdetails->id}}/{{$productdetails->productname}}/{{$productdetails->size}}/{{$productdetails->price}}" method="POST">
                                 @csrf
 
@@ -36,13 +40,17 @@
                                         @enderror
                                 </div>
                                 <div class="contact-email">
-                                        <input type="number" required placeholder="contact" name="contact" value="{{ old('contact') }}">
                                         @error('contact')
                                         <p style="text-align: center; color:red;">{{$message}}</p>
                                         @enderror
+                                        <input type="number" required placeholder="contact" name="contact" value="{{ old('contact') }}">
+
+                                </div>
+                                <div class="available">
+                                        <p style="color: red;">Available : {{$productdetails->stockquantity}}</p>
                                 </div>
                                 <div class="contact-email">
-                                        <input type="number" required placeholder="quantity" name="quantity" value="{{ old('quantity') }}">
+                                        <input type="number" required placeholder="less than {{$productdetails->stockquantity}}" name="quantity" value="{{ old('quantity') }}">
                                         @error('quantity')
                                         <p style="text-align: center; color:red;">{{$message}}</p>
                                         @enderror

@@ -46,7 +46,7 @@
 }
 
 .operations{
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 .operations a {
 
@@ -62,7 +62,7 @@
 }
 
 .tasks{
-padding: 3rem;}
+padding: 1.5rem;}
 
 ul{
     display: flex;

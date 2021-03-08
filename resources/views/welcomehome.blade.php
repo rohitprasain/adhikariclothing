@@ -1,7 +1,7 @@
 @extends('layouts.welcome')
 
 @section('content')
-
+<p class="mag" style="color: red;">{{session('msg')}}</p>
 <div class="welcomehome-container">
     <div class="firstsection">
         <div class="overlay">

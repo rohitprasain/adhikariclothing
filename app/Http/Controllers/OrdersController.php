@@ -18,6 +18,15 @@ class OrdersController extends Controller
 
         ]);
     }
+    public function orderdetails($id)
+    {
+        $orderdetail = Order::findOrFail($id);
+
+        return view('allorderdetail', [
+            'orderdetail' => $orderdetail,
+
+        ]);
+    }
 
 
     public function storeorder(Request $request, $productid, $productname, $size, $price)
@@ -25,7 +34,7 @@ class OrdersController extends Controller
         $request->validate([
             'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
             'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
-            'contact' => 'required | integer',
+            'contact' => ' required | integer |digits:10 ',
             'quantity' => 'required | integer',
         ]);
 
@@ -43,7 +52,7 @@ class OrdersController extends Controller
 
         $storeorder->save();
 
-        return redirect('/welcomestore')->with('msg', 'Thanks for order!!!We will contact soon');
+        return redirect('/welcomestore')->with('msg', 'Thanks for order !!! We will contact soon');
     }
 
     public function destroy($id)
@@ -52,6 +61,6 @@ class OrdersController extends Controller
         $del_order = Order::findOrFail($id);
         $del_order->delete();
 
-        return redirect('/home')->with('msg', 'Order Deleted Successfully');
+        return redirect('/allorders')->with('msg', 'Order Deleted Successfully');
     }
 }

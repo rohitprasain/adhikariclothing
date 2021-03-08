@@ -11,7 +11,7 @@ class MessageController extends Controller
 
     public function allmessage()
     {
-        $messages = Message::all();
+        $messages = Message::orderby('created_at','desc')->get();
 
         return view('allmessages' , [
             'messages' => $messages,

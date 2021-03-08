@@ -11,9 +11,9 @@
     </div>
 
 
-    <div class="all-show">
+    <div class="all-show show-msg">
         @foreach($messages as $message)
-        <div class="message-card" style="margin-bottom: 2rem;">
+        <div class="message-card msg-card" style="margin-bottom: 2rem;">
             <h3>From: <span style="color: brown; text-transform:capitalize">{{$message->firstname}} {{$message->lastname}}</span></h3>
             <h3>Contact: <span style="color: brown;">{{$message->email}}</span></h3>
             <h3>Message: </h3>
@@ -28,6 +28,7 @@
                 </form>
             </div>
         </div>
+        <hr style="margin: 1rem 0rem;">
         @endforeach
     </div>
 

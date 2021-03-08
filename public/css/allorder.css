@@ -7,17 +7,21 @@
 
     border-radius: 1rem;
 
-    display: flex;
-    flex-wrap: wrap;
-
     margin-left: 2rem;
 }
+
+/* .ordercontainer{
+    display: flex;
+    flex-wrap: wrap; 
+}
+*/
 .order-card{
+    /* max-width: 30rem; */
     margin-bottom: 10;
 }
 .delorder button{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 .ordercontainer{
-    display: flex;
+    /* display: flex; */
 }

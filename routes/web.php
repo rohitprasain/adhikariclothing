@@ -37,6 +37,8 @@ Route::post('/sendmessage', [App\Http\Controllers\LandingController::class, 'sto
 //orderscontroller
 
 Route::get('/allorders', [App\Http\Controllers\OrdersController::class, 'allorder'])->name('allorder')->middleware('auth');
+Route::get('/orderdetails/{id}', [App\Http\Controllers\OrdersController::class, 'orderdetails'])->name('orderdetails')->middleware('auth');
+
 Route::delete('/deleteorder/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])->name('deleteorder')->middleware('auth');
 
 Route::post('/storeorder/{productid}/{productname}/{size}/{price}', [App\Http\Controllers\OrdersController::class, 'storeorder'])->name('storeorder')->middleware('guest');

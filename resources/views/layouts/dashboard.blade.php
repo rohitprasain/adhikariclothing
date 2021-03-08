@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{url('/css/dashboardhome.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/allorder.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/addproduct.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/allmessages.css')}}" type="text/css">
 
 
 
@@ -81,11 +82,12 @@
             <div class="operations">
                 <ul>
                     <li class="tasks tasks1"><a href="{{route('allemployee')}}">All Employee</a></li>
+                    <li class="tasks"> <a href="{{route('allorder')}}">All Orders</a></li>
+                    <li class="tasks"> <a href="{{route('allmessages')}}">All Messages</a></li>
+
                     <li class="tasks"> <a href="{{route('addemployee')}}">Add Employee</a></li>
                     <li class="tasks"> <a href="{{route('addproduct')}}">Add Product</a></li>
 
-                    <li class="tasks"> <a href="{{route('allorder')}}">All Orders</a></li>
-                    <li class="tasks"> <a href="{{route('allmessages')}}">All Messages</a></li>
                 </ul>
             </div>
         </div>

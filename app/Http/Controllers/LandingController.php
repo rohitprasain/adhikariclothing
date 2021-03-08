@@ -45,9 +45,8 @@ class LandingController extends Controller
         $request->validate([
             'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
             'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
-            'email' => 'required ',
             'email' => 'required | email',
-            'description' => 'required | max:20',
+            'description' => 'required | max:50 | string',
         ]);
 
         $message = new Message();
@@ -58,6 +57,6 @@ class LandingController extends Controller
 
         $message->save();
 
-        return redirect('/');
+        return redirect('/')->with('msg' , 'Thanks for your feedback :) !!');
     }
 }
