@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Rasmi Clothing</title>
+    <title>Adhikari Clothing</title>
 
-    <link rel="icon" href="{{url('/images/dress.png')}}">
+    <link rel="icon" href="{{url('/images/titleicon.png')}}">
     <link rel="stylesheet" href="{{url('/css/welcome/welcome.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomehome.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/welcome/welcomestore.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/welcome/welcomecontact.css')}}" type="text/css">
 
     <!-- Fonts -->
@@ -31,7 +32,7 @@
             <div class="nav">
                 <div class="logo">
                     <a href="{{route('welcomehome')}}" style="text-decoration: none;">
-                        <p>rasmi.</p>
+                        <p>adhikariclothing.</p>
                     </a>
                 </div>
 
@@ -59,7 +60,7 @@
 
 
         <div class="footer">
-            <p>&copy;2021 rasmiclothing.pvt.ltd. || All rights reserved </p>
+            <p>&copy;2021 adhikariclothing.pvt.ltd. || All rights reserved </p>
         </div>
 
     </div>

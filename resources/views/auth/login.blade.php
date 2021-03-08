@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{url('/images/dress.png')}}">
+    <link rel="icon" href="{{url('/images/titleicon.png')}}">
 
-    <title>Rasmi Clothing</title>
+    <title>Adhikari Clothing</title>
 
     <link rel="stylesheet" href="{{url('/css/loginpage.css')}}" type="text/css">
 
@@ -26,7 +26,7 @@
             <form action="{{route('login')}}" method="POST">
                 @csrf
                 <div class="admin-description">
-                    <h2>Rasmi Clothing</h2>
+                    <h2>Adhikari Clothing</h2>
                     <h3>Admin Login</h3>
                 </div>
                 <hr>

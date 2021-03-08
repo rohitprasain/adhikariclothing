@@ -47,14 +47,14 @@
         </div>
 
         <div class="contact-location">
-            <h2><span>🏠 Lolang,Kathmandu</span></h2>
+            <h2><span>🏠 New Baneshwor,Kathmandu</span></h2>
 
         </div>
         <div class="contact-phonenumber">
             <h2><span>📞 +9779849561819</span></h2>
         </div>
         <div class="contact-gmail">
-            <h2><span>📧 microscopicrohit@gmail.com</span></h2>
+            <h2><span>📧 mkt.adhikariclothing@gmail.com</span></h2>
         </div>
     </div>
 

@@ -14,8 +14,8 @@
     <div class="all-show">
         @foreach($messages as $message)
         <div class="message-card" style="margin-bottom: 2rem;">
-            <h3>From: <span style="color: brown; text-transform:capitalize">{{$message->firstname}}</span></h3>
-            <h3>Contact: <span style="color: brown; text-transform:capitalize">{{$message->email}}</span></h3>
+            <h3>From: <span style="color: brown; text-transform:capitalize">{{$message->firstname}} {{$message->lastname}}</span></h3>
+            <h3>Contact: <span style="color: brown;">{{$message->email}}</span></h3>
             <h3>Message: </h3>
             <p style="color: red;">{{$message->description}}</p>
             <div class="detail-delete" style="margin-top:.5rem">

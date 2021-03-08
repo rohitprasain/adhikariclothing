@@ -11,6 +11,8 @@
 
         <h1>Total employee : {{$totalemployee}}</h1>
         <h1>Total messages : {{$totalmessage}}</h1>
+        <h1>Total Products : {{$totalproduct}}</h1>
+        <h1>Total orders : {{$totalorder}}</h1>
 
     </div>
 </div>

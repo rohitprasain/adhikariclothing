@@ -27,9 +27,6 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">Jackets</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
         </div>
         <div class="card">
             <div class="card-image">
@@ -39,9 +36,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+            
         </div>
         <div class="card">
             <div class="card-image">
@@ -51,9 +46,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">YogaDress</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+            
         </div>
         <div class="card">
             <div class="card-image">
@@ -63,9 +56,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+           
         </div>
         <div class="card">
             <div class="card-image">
@@ -75,9 +66,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">Summer T-Shirt</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+           
         </div>
         <div class="card">
             <div class="card-image">
@@ -87,9 +76,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">Baby Hoodie</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+           
         </div>
         <div class="card">
             <div class="card-image">
@@ -99,9 +86,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">Jackets</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+            
         </div>
         <div class="card">
             <div class="card-image">
@@ -111,9 +96,7 @@
             <div class="card-details" style="margin-top: .5rem;">
                 <p style="color:#008cba; font-size:1.5rem">LongSleeves</p>
             </div>
-            <div class="contact-login-btn">
-                <button type="submit" class="login-btn">Buy</button>
-            </div>
+           
         </div>
     </div>
 </div>

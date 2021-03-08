@@ -52,7 +52,7 @@ class EmployeesController extends Controller
         $employee->description  = $request->description;
         $employee->save();
 
-        return redirect('/allemployee')->with('msg','Employee Added Successfully');;
+        return redirect('/allemployee')->with('msg','Employee Added Successfully');
     }
 
     public function show($id)

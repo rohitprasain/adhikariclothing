@@ -7,17 +7,19 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{url('/images/dress.png')}}">
+    <link rel="icon" href="{{url('/images/titleicon.png')}}">
 
     <link rel="stylesheet" href="{{url('/css/dashboard.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/allemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/detailemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/addemployee.css')}}" type="text/css">
     <link rel="stylesheet" href="{{url('/css/dashboardhome.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/allorder.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url('/css/addproduct.css')}}" type="text/css">
 
 
 
-    <title>{{'Rasmi Clothing'}}</title>
+    <title>{{'Adhikari Clothing'}}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -67,10 +69,10 @@
         <div class="dashboard">
             <div class="brand">
                 <div class="brand-img">
-                    <img src="{{url('images/dress.png')}}" alt="brandimage"><br>
+                    <img src="{{url('images/titleicon.png')}}" alt="brandimage"><br>
                 </div>
                 <div class="brand-name">
-                    <p>rasmi. clothing</p>
+                    <p>adhikari clothing</p>
                 </div>
                 <hr style="width: 80%">
             </div>
@@ -80,6 +82,9 @@
                 <ul>
                     <li class="tasks tasks1"><a href="{{route('allemployee')}}">All Employee</a></li>
                     <li class="tasks"> <a href="{{route('addemployee')}}">Add Employee</a></li>
+                    <li class="tasks"> <a href="{{route('addproduct')}}">Add Product</a></li>
+
+                    <li class="tasks"> <a href="{{route('allorder')}}">All Orders</a></li>
                     <li class="tasks"> <a href="{{route('allmessages')}}">All Messages</a></li>
                 </ul>
             </div>
