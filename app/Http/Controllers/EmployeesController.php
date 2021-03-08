@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 
-
-
 class EmployeesController extends Controller
 {
 
@@ -25,15 +23,8 @@ class EmployeesController extends Controller
         return view('addemployee');
     }
 
-
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
-
         $request->validate([
             'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
             'lastname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
@@ -89,10 +80,8 @@ class EmployeesController extends Controller
         $edit_employee->description  = $request->description;
         $edit_employee->save();
 
-
         // return redirect('/allemployee');
         return redirect()->route('allemployee')->with('msg','Details Updated Successfully');
-
 
     }
 

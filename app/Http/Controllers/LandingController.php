@@ -12,22 +12,18 @@ use Illuminate\Support\Facades\DB;
 
 class LandingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function welcomehome()
     {
         return  view('welcomehome');
     }
 
-    
+
     public function welcomestore()
     {
-        $babies = DB::table('products')->where('category' , 'baby')->get();
-        $male = DB::table('products')->where('category' , 'male')->get();
-        $female = DB::table('products')->where('category' , 'female')->get();
+        $babies = DB::table('products')->where('category', 'baby')->get();
+        $male = DB::table('products')->where('category', 'male')->get();
+        $female = DB::table('products')->where('category', 'female')->get();
 
         return  view('welcomestore', [
             'babies' => $babies,
@@ -62,6 +58,6 @@ class LandingController extends Controller
 
         $message->save();
 
-         return redirect('/');
+        return redirect('/');
     }
 }

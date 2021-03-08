@@ -54,7 +54,7 @@
             <div class="detail-edit">
                 <form action="/editdetail/{{$employee_id->id}}" method="POST">
                     @csrf
-                   
+
 
                     <button type="submit" class="button">Edit</button>
 
@@ -72,11 +72,8 @@
             </div>
 
         </div>
-
-
     </div>
 
+</div>
 
-</div>
-</div>
 @endsection

@@ -67,10 +67,6 @@ td {
 }
 
 @media (max-width:1050px){
-/* .detail{
-    display: none;
-} */
-
 .all-show .detail{
     margin: 0;
 }

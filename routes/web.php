@@ -8,16 +8,6 @@ Route::get('/', function () {
     return view('welcomehome');
 })->middleware('guest')->name('welcomehome');
 
-
-//dashboard routes
-Route::get('/logout', function () {
-    return view('layouts.welcome');
-})->middleware('guest');;
-
-Route::get('/editdetail/{id}', function(){
-    return abort(403, 'Unauthorized action.');
-});
-
 //employeecontroller
 Route::get('/allemployee', [App\Http\Controllers\EmployeesController::class, 'allemployee'])->name('allemployee')->middleware('auth');
 
@@ -39,7 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //landingcontroller
 
-// Route::get('/welcomehome', [App\Http\Controllers\LandingController::class, 'welcomehome'])->name('welcomehome')->middleware('guest');
 Route::get('/welcomestore', [App\Http\Controllers\LandingController::class, 'welcomestore'])->name('welcomestore')->middleware('guest');
 Route::get('/welcomecontact', [App\Http\Controllers\LandingController::class, 'welcomecontact'])->name('welcomecontact')->middleware('guest');
 
@@ -65,3 +54,26 @@ Route::get('/showproductdetail/{id}', [App\Http\Controllers\ProductsController::
 
 Route::get('/allmessages', [App\Http\Controllers\MessageController::class, 'allmessage'])->name('allmessages')->middleware('auth');
 Route::delete('/deletemessage/{id}', [App\Http\Controllers\MessageController::class, 'destroy'])->name('deletemessage')->middleware('auth');
+
+
+
+//custom route disabling
+Route::get('/editdetail/{id}', function(){
+    return abort(403, 'Unauthorized action.');
+});
+Route::get('/sendmessage', function(){
+    return abort(403, 'Unauthorized action.');
+});
+Route::get('/addemployeee', function(){
+    return abort(403, 'Unauthorized action.');
+});
+
+Route::get('/login', function(){
+    return abort(403, 'Unauthorized action.');
+});
+Route::get('/register', function(){
+    return abort(403, 'Unauthorized action.');
+});
+Route::get('/logout', function(){
+    return abort(403, 'Unauthorized action.');
+});

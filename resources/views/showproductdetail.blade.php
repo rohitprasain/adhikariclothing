@@ -7,7 +7,7 @@
         <div class="order-container">
                 <div class="order-left">
                         <div class="orderimg">
-                                <img src="{{url('/images/'.$productdetails->category .'/' .$productdetails->imglocation)}}" alt="baby-img" height="400rem" width="350rem">
+                                <img src="{{url('/images/'.$productdetails->category .'/' .$productdetails->imglocation)}}" alt="baby-img" height="250rem" width="300rem">
                         </div>
                         <div class="orderproductname">
                                 <p>{{$productdetails->productname}} ({{$productdetails->size}})</p>
@@ -53,9 +53,6 @@
                                 </div>
                         </form>
                 </div>
-
-
-
         </div>
 
 </div>

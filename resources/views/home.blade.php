@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="home-container">
+
     <p class="mag" style="color: red;">{{session('msg')}}</p>
 
     <div class="home-img">
@@ -15,5 +16,6 @@
         <h1>Total orders : {{$totalorder}}</h1>
 
     </div>
+    
 </div>
 @endsection

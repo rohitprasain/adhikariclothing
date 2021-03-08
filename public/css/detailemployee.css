@@ -55,8 +55,6 @@ td {
 }
 
 .detail-edit button:hover {
-   
-
     background-color: #008CBA;
     color: white;
 }
@@ -80,8 +78,6 @@ td {
 }
 
 .detail-delete button:hover {
-   
-
     background-color: #f44336;
     color: white;
 }

@@ -5,8 +5,8 @@
 
     <div class="detail-heading" style="margin-bottom:1rem;">
         <h2 style="margin-left: 1rem; font-size:1.5rem;"> Change Details</h2>
-
     </div>
+
     <form action="/editdetail/{{$edit_id->id}}" method="POST">
 
         @csrf
@@ -55,5 +55,6 @@
         </div>
 
     </form>
+
 </div>
 @endsection
