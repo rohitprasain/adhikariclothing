@@ -47,10 +47,10 @@
 
                                 </div>
                                 <div class="available">
-                                        <p style="color: red;">Available : {{$productdetails->stockquantity}}</p>
+                                        <p style="color: red;">Available : {{$available}}</p>
                                 </div>
                                 <div class="contact-email">
-                                        <input type="number" required placeholder="less than {{$productdetails->stockquantity}}" name="quantity" value="{{ old('quantity') }}">
+                                        <input type="number" required placeholder="less than {{$available}}" name="quantity" value="{{ old('quantity') }}">
                                         @error('quantity')
                                         <p style="text-align: center; color:red;">{{$message}}</p>
                                         @enderror
@@ -59,6 +59,7 @@
                                 <div class="contact-login-btn">
                                         <button type="submit" class="login-btn">Order</i></button>
                                 </div>
+
                         </form>
                 </div>
         </div>

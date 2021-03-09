@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Order;
 
 
 class ProductsController extends Controller
@@ -46,9 +47,13 @@ class ProductsController extends Controller
     {
         // dd($id);
         $productdetails = Product::findOrFail($id);
+        $orderedquantity = Order::where('productid' , '=' , $id)->sum('quantity');
+        $available = $productdetails->stockquantity - $orderedquantity;
+        // dd($available);
         // dd($productdetails);
         return view('showproductdetail', [
             "productdetails" => $productdetails,
+            "available" => $available,
         ]);
     }
 
