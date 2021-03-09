@@ -129,8 +129,6 @@
         align-items: center;
 
         z-index: 1;
-
-        border: 2px solid red;
     }
     .nav .closehamburger {
         display: inline;
