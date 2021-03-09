@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 08, 2021 at 07:01 PM
+-- Generation Time: Mar 09, 2021 at 05:34 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.15
 
@@ -126,7 +126,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_03_04_155645_create_employees_table', 1),
 (5, '2021_03_06_081439_create_messages_table', 1),
 (6, '2021_03_08_043034_create_products_table', 1),
-(7, '2021_03_08_044530_create_orders_table', 1);
+(8, '2021_03_08_044530_create_orders_table', 2);
 
 -- --------------------------------------------------------
 
@@ -138,13 +138,13 @@ CREATE TABLE `orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `productid` bigint(20) NOT NULL,
   `productname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` bigint(20) NOT NULL,
   `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contact` bigint(20) NOT NULL,
   `quantity` bigint(20) NOT NULL,
-  `order_submitted_at` timestamp NULL DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -154,11 +154,8 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `productid`, `productname`, `size`, `price`, `firstname`, `lastname`, `contact`, `quantity`, `order_submitted_at`, `remember_token`, `created_at`, `updated_at`) VALUES
-(8, 4, 'boys sleeveless', 'small', 700, 'yogendra', 'maharjan', 9873826344, 4, NULL, NULL, '2021-03-08 12:03:41', '2021-03-08 12:03:41'),
-(9, 5, 'combo set', 'small', 800, 'shyam', 'shrestha', 9872384232, 3, NULL, NULL, '2021-03-08 12:03:55', '2021-03-08 12:03:55'),
-(10, 16, 'summer tshirt', 'medium', 550, 'rajani', 'shahi', 9872384762, 55, NULL, NULL, '2021-03-08 12:04:15', '2021-03-08 12:04:15'),
-(11, 17, 'trumpet longsleeve', 'large', 1500, 'rajiv', 'lamichhane', 9878634232, 4, NULL, NULL, '2021-03-08 12:04:42', '2021-03-08 12:04:42');
+INSERT INTO `orders` (`id`, `productid`, `productname`, `category`, `size`, `price`, `firstname`, `lastname`, `contact`, `quantity`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 6, 'male', 'fitness tshirt', 'large', 1000, 'yogendra', 'maharjan', 9841506623, 5, NULL, '2021-03-09 10:16:16', '2021-03-09 10:16:16');
 
 -- --------------------------------------------------------
 
@@ -199,20 +196,23 @@ INSERT INTO `products` (`id`, `productname`, `size`, `price`, `stockquantity`, `
 (1, 'baby boy top', 'small', 550, 100, 'babyboytop.jpg', 'baby', NULL, '2021-03-08 10:46:05', '2021-03-08 10:46:05'),
 (2, 'babyhoodie', 'small', 600, 80, 'babyhoodie.jpg', 'baby', NULL, '2021-03-08 10:47:01', '2021-03-08 10:47:01'),
 (3, 'baby summer', 'small', 550, 80, 'babysummer.jpg', 'baby', NULL, '2021-03-08 10:47:37', '2021-03-08 10:47:37'),
-(4, 'boys sleeveless', 'small', 700, 60, 'boysleeveless.jpg', 'baby', NULL, '2021-03-08 10:48:02', '2021-03-08 10:48:02'),
+(4, 'boys sleeveless', 'small', 700, 56, 'boysleeveless.jpg', 'baby', NULL, '2021-03-08 10:48:02', '2021-03-09 09:54:45'),
 (5, 'combo set', 'small', 800, 70, 'combo.jpg', 'baby', NULL, '2021-03-08 10:48:23', '2021-03-08 10:48:23'),
-(6, 'fitness tshirt', 'large', 1000, 50, 'fitnesstshirt.jpg', 'male', NULL, '2021-03-08 10:49:13', '2021-03-08 10:49:13'),
+(6, 'fitness tshirt', 'large', 1000, 45, 'fitnesstshirt.jpg', 'male', NULL, '2021-03-08 10:49:13', '2021-03-09 10:21:57'),
 (7, 'gym bag', 'medium', 950, 70, 'gymbag.jpg', 'male', NULL, '2021-03-08 10:49:50', '2021-03-08 10:49:50'),
 (8, 'jackets', 'small', 750, 50, 'jackets.jpg', 'male', NULL, '2021-03-08 10:50:14', '2021-03-08 10:50:14'),
 (9, 'joggers hoodie', 'large', 1500, 150, 'joggershoodie.jpg', 'male', NULL, '2021-03-08 10:51:03', '2021-03-08 10:51:03'),
 (10, 'summer shorts', 'medium', 950, 50, 'summershorts.jpg', 'male', NULL, '2021-03-08 10:51:34', '2021-03-08 10:51:34'),
-(11, 'summer sleevless', 'large', 800, 50, 'summersleeveless.jpg', 'male', NULL, '2021-03-08 10:52:11', '2021-03-08 10:52:11'),
+(11, 'summer sleevless', 'large', 800, 46, 'summersleeveless.jpg', 'male', NULL, '2021-03-08 10:52:11', '2021-03-09 08:23:26'),
 (12, 'v neck sweater', 'medium', 1200, 100, 'vnecksweater.jpg', 'male', NULL, '2021-03-08 10:52:48', '2021-03-08 10:52:48'),
-(13, 'butterfly sleeve', 'medium', 800, 200, 'butterflysleeve.jpg', 'female', NULL, '2021-03-08 10:53:29', '2021-03-08 10:53:29'),
+(13, 'butterfly sleeve', 'medium', 800, 190, 'butterflysleeve.jpg', 'female', NULL, '2021-03-08 10:53:29', '2021-03-09 06:37:44'),
 (14, 'long sleeves', 'medium', 650, 60, 'longsleeves.jpg', 'female', NULL, '2021-03-08 10:53:55', '2021-03-08 10:53:55'),
 (15, 'panther top', 'medium', 600, 45, 'panthertop.jpg', 'female', NULL, '2021-03-08 10:54:23', '2021-03-08 10:54:23'),
 (16, 'summer tshirt', 'medium', 550, 50, 'summertshirt.jpg', 'female', NULL, '2021-03-08 10:54:50', '2021-03-08 10:54:50'),
-(17, 'trumpet longsleeve', 'large', 1500, 30, 'trumpetlongsleeve.jpg', 'female', NULL, '2021-03-08 10:55:29', '2021-03-08 10:55:29');
+(17, 'trumpet longsleeve', 'large', 1500, 30, 'trumpetlongsleeve.jpg', 'female', NULL, '2021-03-08 10:55:29', '2021-03-08 10:55:29'),
+(18, 'snow set baby', 'small', 550, 100, 'snowset.jpg', 'baby', NULL, '2021-03-09 01:21:47', '2021-03-09 01:21:47'),
+(19, 'yoga dress', 'medium', 800, 100, 'yogadress.jpg', 'female', NULL, '2021-03-09 01:23:09', '2021-03-09 01:23:09'),
+(20, 'summer tshirt', 'medium', 1200, 5, 'babysummer.jpg', 'male', NULL, '2021-03-09 01:27:09', '2021-03-09 01:27:09');
 
 -- --------------------------------------------------------
 
@@ -312,25 +312,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
