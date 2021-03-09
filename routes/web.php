@@ -70,12 +70,12 @@ Route::get('/addemployeee', function(){
     return abort(403, 'Unauthorized action.');
 });
 
-Route::get('/login', function(){
-    return abort(403, 'Unauthorized action.');
-});
-Route::get('/register', function(){
-    return abort(403, 'Unauthorized action.');
-});
+// Route::get('/login', function(){
+//     return abort(403, 'Unauthorized action.');
+// });
+// Route::get('/register', function(){
+//     return abort(403, 'Unauthorized action.');
+// });
 Route::get('/logout', function(){
     return abort(403, 'Unauthorized action.');
 });
