@@ -40,6 +40,7 @@ Route::get('/allorders', [App\Http\Controllers\OrdersController::class, 'allorde
 Route::get('/orderdetails/{id}', [App\Http\Controllers\OrdersController::class, 'orderdetails'])->name('orderdetails')->middleware('auth');
 
 Route::delete('/deleteorder/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])->name('deleteorder')->middleware('auth');
+Route::delete('/confirmorder/{id}', [App\Http\Controllers\OrdersController::class, 'confirmorder'])->name('confirm')->middleware('auth');
 
 Route::post('/storeorder/{productid}/{productname}/{size}/{price}', [App\Http\Controllers\OrdersController::class, 'storeorder'])->name('storeorder')->middleware('guest');
 

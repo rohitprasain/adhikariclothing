@@ -31,6 +31,15 @@
 
                 </form>
             </div>
+            <div class="detail-delete" style="margin-top:.5rem">
+                <form action="/confirmorder/{{$orderdetail->id}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="button">Confirm</button>
+
+                </form>
+            </div>
         </div>
         <hr style="margin: 1rem 0rem;">
 

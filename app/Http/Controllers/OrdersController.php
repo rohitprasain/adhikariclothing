@@ -63,4 +63,29 @@ class OrdersController extends Controller
 
         return redirect('/allorders')->with('msg', 'Order Deleted Successfully');
     }
+    public function confirmorder($id)
+    {
+
+        $del_order = Order::findOrFail($id);
+        // dd($del_order);
+
+        $confirmproduct = Product::findOrFail($del_order->productid);
+        // dd($confirmproduct);
+
+
+        $previousquantity =  $confirmproduct->stockquantity;
+
+        $newquantity = $previousquantity - $del_order->quantity;
+        // dd($newquantity);
+
+
+        
+////adkikyochan
+        $confirmproduct->stockquantity = $newquantity;
+        $confirmproduct->save();
+
+        $del_order->delete();
+
+        return redirect('/allorders')->with('msg', 'Order Delivered Successfully');
+    }
 }
