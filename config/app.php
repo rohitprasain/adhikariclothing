@@ -15,6 +15,11 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    /*heroku error log */
+    'log' => 'errorlog',
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
