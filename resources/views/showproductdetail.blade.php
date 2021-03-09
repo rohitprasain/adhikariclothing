@@ -24,7 +24,7 @@
                         <div class="orderprice">
                                 <p style="color: black; font-size:1.5rem;">Your Details:</p>
                         </div>
-                        <form action="/storeorder/{{$productdetails->id}}/{{$productdetails->productname}}/{{$productdetails->size}}/{{$productdetails->price}}" method="POST">
+                        <form action="/storeorder/{{$productdetails->id}}/{{$productdetails->productname}}/{{$productdetails->category}}/{{$productdetails->size}}/{{$productdetails->price}}" method="POST">
                                 @csrf
 
                                 <div class="contact-name">

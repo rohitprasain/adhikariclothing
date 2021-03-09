@@ -19,6 +19,7 @@ class Order extends Model
 
         'productid',
         'productname',
+        'category',
         'size',
         'price',
         

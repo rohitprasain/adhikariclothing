@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
 
             $table->bigInteger('productid');
             $table->string('productname');
+            $table->string('category');
             $table->string('size');
             $table->bigInteger('price');
 
@@ -25,8 +26,6 @@ class CreateOrdersTable extends Migration
             $table->string('lastname');
             $table->bigInteger('contact');
             $table->bigInteger('quantity');
-
-            $table->timestamp('order_submitted_at')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

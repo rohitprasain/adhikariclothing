@@ -29,7 +29,7 @@ class OrdersController extends Controller
     }
 
 
-    public function storeorder(Request $request, $productid, $productname, $size, $price)
+    public function storeorder(Request $request, $productid, $productname,$category, $size, $price)
     {
         $request->validate([
             'firstname'  => 'required | regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/',
@@ -42,6 +42,7 @@ class OrdersController extends Controller
 
         $storeorder->productid = $productid;
         $storeorder->productname = $productname;
+        $storeorder->category = $category;
         $storeorder->size = $size;
         $storeorder->price = $price;
 

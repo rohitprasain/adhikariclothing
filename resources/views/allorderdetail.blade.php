@@ -17,6 +17,7 @@
             <h3>From: <span style="color: brown; text-transform:capitalize">{{$orderdetail->firstname}} {{$orderdetail->lastname}}</span></h3>
             <h3>Contact: <span style="color: brown;">{{$orderdetail->contact}}</span></h3>
             <h3>Product Name: <span style="color: brown;">{{$orderdetail->productname}}</span></h3>
+            <h3>Category: <span style="color: brown;">{{$orderdetail->category}}</span></h3>
             <h3>Size: <span style="color: brown;">{{$orderdetail->size}}</span></h3>
             <h3>Quantity: <span style="color: brown;">{{$orderdetail->quantity}}</span></h3>
             <h3>Price: <span style="color: brown;">{{$orderdetail->price}}</span></h3>
@@ -31,7 +32,7 @@
 
                 </form>
             </div>
-            <div class="detail-delete" style="margin-top:.5rem">
+            <div class="detail-delete " style="margin-top:.5rem; margin-left:0;border-color:black;">
                 <form action="/confirmorder/{{$orderdetail->id}}" method="POST">
                     @csrf
                     @method('DELETE')
